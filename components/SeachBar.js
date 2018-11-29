@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
   },
   search: {
     flex: 1,
-    fontSize: 22,
+    fontSize: 26,
   },
-
 });
