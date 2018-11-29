@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
+import Movie from './Movie';
 
 export default class MovieList extends React.Component {
 
@@ -10,7 +11,13 @@ export default class MovieList extends React.Component {
     } else if (this.props.movies.length === 0) {
       return <Text>No Results</Text>;
     } else {
-      return <Text>Movies Searched!</Text>;
+      return (
+        <FlatList
+          data={this.props.movies}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({item}) => <Movie {...item} />}
+        />
+      );
     }
   }
 }
