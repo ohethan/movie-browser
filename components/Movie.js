@@ -1,14 +1,14 @@
 import React from 'react';
-import { Image, Text, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity,  } from 'react-native';
 
 export default class Movie extends React.Component {
 
   render() {
     console.log('movie.js')
     return (
-      <TouchableOpacity>
+      <TouchableOpacity style={styles.container}>
         <Image 
-          style={{width: 120, height: 178}}
+          style={styles.image}
           source={{uri: this.props.Poster}}
         />
         <Text>{this.props.Title}</Text>
@@ -18,17 +18,15 @@ export default class Movie extends React.Component {
   }
 }
 
-// const Movie = ({ poster, title, year }) => {
-//   return (
-//     <TouchableOpacity>
-//       <Image 
-//         style={{width: 120, height: 178}}
-//         source={{uri: poster}}
-//       />
-//       <Text>{title}</Text>
-//       <Text>{year}</Text>
-//     </TouchableOpacity>
-//   );
-// };
-
-// export default Movie;
+const styles = StyleSheet.create({
+  image: {
+    height: 225,
+    width: 150,
+  },
+  container: {
+    marginBottom: 50,
+    width: 150,
+    borderWidth: 1,
+    borderColor: 'red',
+  }
+});

@@ -13,8 +13,10 @@ export default class MovieList extends React.Component {
     } else {
       return (
         <FlatList
+          columnWrapperStyle={{justifyContent: 'space-around'}}
           data={this.props.movies}
           keyExtractor={(item, index) => index.toString()}
+          numColumns={2}
           renderItem={({item}) => <Movie {...item} />}
         />
       );
