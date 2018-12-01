@@ -4,7 +4,6 @@ import { Image, StyleSheet, Text, TouchableOpacity,  } from 'react-native';
 export default class Movie extends React.Component {
 
   render() {
-    console.log('movie.js')
     return (
       <TouchableOpacity style={styles.container}>
         <Image 
