@@ -26,7 +26,5 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 50,
     width: 150,
-    borderWidth: 1,
-    borderColor: 'red',
   }
 });
