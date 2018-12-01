@@ -1,7 +1,9 @@
-export const fetchMovies = async (searchInput) => {
+export const fetchMovies = async (searchInput, searchOptions) => {
   const searchParam = searchInput.split(' ').join('+');
-  const response = await fetch(`http://www.omdbapi.com/?apikey=f998727d&s=${searchParam}}`);
-  console.log(response);
+  const response = await fetch(`http://www.omdbapi.com/?apikey=f998727d&s=${searchParam}&page=${searchOptions.page}`);
   const {Search: res} = await response.json();
-  return res;
+  if (res) 
+    return res;
+  else 
+    return [];
 }
